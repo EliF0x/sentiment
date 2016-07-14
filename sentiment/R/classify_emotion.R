@@ -2,7 +2,7 @@ classify_emotion <- function(textColumns,algorithm="bayes",prior=1.0,verbose=FAL
 	matrix <- create_matrix(textColumns,...)
 	lexicon <- read.csv(system.file("data/emotions.csv.gz",package="sentiment"),header=FALSE)
 
-	counts <- list(anger=length(which(lexicon[,2]=="anger")),trust=length(which(lexicon[,2]=="trust")),distrust=length(which(lexicon[,2]=="distrust")),fear=length(which(lexicon[,2]=="fear")),joy=length(which(lexicon[,2]=="joy")),sadness=length(which(lexicon[,2]=="sadness")),surprise=length(which(lexicon[,2]=="surprise")),anticipation=length(which(lexicon[,2]=="anticipation"))total=nrow(lexicon))
+	counts <- list(anger=length(which(lexicon[,2]=="anger")),trust=length(which(lexicon[,2]=="trust")),distrust=length(which(lexicon[,2]=="distrust")),fear=length(which(lexicon[,2]=="fear")),joy=length(which(lexicon[,2]=="joy")),sadness=length(which(lexicon[,2]=="sadness")),surprise=length(which(lexicon[,2]=="surprise")),anticipation=length(which(lexicon[,2]=="anticipation")),total=nrow(lexicon))
 	documents <- c()
 
 	for (i in 1:nrow(matrix)) {
